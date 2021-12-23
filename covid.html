@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js" integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.1/dist/zephyr/bootstrap.min.css" integrity="sha256-fPcXOlGMPTfMzh2hrJPeYWulsKXYdIssk5VBAbZEUMI=" crossorigin="anonymous">
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <style type="text/css">
+        .present {background-color: green !important; color: white !important;}
+        </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="margin-bottom: 15px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">COVID Typer</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          
+        </div>
+    </nav>
+
+    <!-- <div class="container">
+        <button type="button" class="btn btn-outline-primary" >Q52R</button>
+        <button type="button" class="btn btn-outline-primary" >A67V</button>
+        <button type="button" class="btn btn-outline-primary">&Delta;H69</button>
+        <button type="button" class="btn btn-outline-primary">&Delta;V70</button>
+        <button type="button" class="btn btn-outline-primary">V70F</button>
+        <button type="button" class="btn btn-outline-primary">G75V</button>
+        <button type="button" class="btn btn-outline-primary">T61I</button>
+    </div> -->
+
+    <div class="container" style="margin-bottom: 50px;">
+        <div data-bind="foreach: mutations">
+            <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
+                                                                             css: {active: selected},
+                                                                             click: $parent.toggleSelected"></button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Mutations</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Identified:</h4>
+                        <div data-bind="foreach: mutations">
+                            <p class="card-text" data-bind="text: name, visible: selected"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col">
+                <div class="card bg-secondary mb-3" style="width: fit-content;">
+                    <div class="card-header">Best Fit</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Identified:</h4>
+                        <div data-bind="foreach: bestFit">
+                            <p class="card-text" data-bind="text: display"></p>                          
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr data-bind="foreach: lineage.mutations">
+                                        <td data-bind="text: $data, css: {'present': $parents[1].mutations().find(mut => mut.name == $data).selected()}"></td>
+                                        <!-- <p data-bind="text: $parent.mutations()[0].name"></p> -->
+                                      </tr>
+                                </tbody> 
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" data-bind="click:toggleAcc, css: {collapsed: showAcc}" >
+                  Variants of Interest
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bind="class: accStatus">
+                <div class="accordion-body">
+                    <table class="table table-hover">
+                        <tbody data-bind="foreach: activeList">
+                            <tr>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" data-bind="checked: status" />
+                                    <label class="form-check-label" data-bind="text: name"></label>
+                                </td>
+                                <!-- <td data-bind="text: name + status"></td> -->
+                            </tr>
+                        </tbody> 
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <div class="container">
+       
+    </div>
+
+    <!-- <div class="container">
+        <ul class="list-group" data-bind="foreach: mutations">
+            <li class="justify-content-between align-items-center" data-bind="text: name,
+            visible: selected"> </li>
+        </ul>
+    </div> -->
+
+    
+    
+</body>
+<script src="covid.js"></script>
+</html>
