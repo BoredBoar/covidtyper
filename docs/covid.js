@@ -158,6 +158,36 @@ function AppViewModel() {
       {name:"K1191N", selected: ko.observable(false)}
      ])
 
+     self.Array1 = self.mutations().filter(mut => {
+      var regex = /\d+/g
+      var num = mut.name.match(regex)
+      return num < 200
+     })
+
+     self.Array2 = self.mutations().filter(mut => {
+      var regex = /\d+/g
+      var num = mut.name.match(regex)
+      return num >= 200 && num < 400
+     })
+
+     self.Array3 = self.mutations().filter(mut => {
+      var regex = /\d+/g
+      var num = mut.name.match(regex)
+      return num >= 400 && num < 600
+     })
+
+     self.Array4 = self.mutations().filter(mut => {
+      var regex = /\d+/g
+      var num = mut.name.match(regex)
+      return num >= 600 && num < 800
+     })
+
+     self.Array5 = self.mutations().filter(mut => {
+      var regex = /\d+/g
+      var num = mut.name.match(regex)
+      return num >= 800
+     })
+
      self.variants = 
      {
       "B.1.1": {

@@ -28,27 +28,64 @@
         </div>
     </nav>
 
-    <!-- <div class="container">
-        <button type="button" class="btn btn-outline-primary" >Q52R</button>
-        <button type="button" class="btn btn-outline-primary" >A67V</button>
-        <button type="button" class="btn btn-outline-primary">&Delta;H69</button>
-        <button type="button" class="btn btn-outline-primary">&Delta;V70</button>
-        <button type="button" class="btn btn-outline-primary">V70F</button>
-        <button type="button" class="btn btn-outline-primary">G75V</button>
-        <button type="button" class="btn btn-outline-primary">T61I</button>
-    </div> -->
 
-    <div class="container" style="margin-bottom: 50px;">
+
+
+    <!-- <div class="container-fluid" style="margin-bottom: 50px;">
         <div data-bind="foreach: mutations">
+            <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
+                                                                             css: {active: selected},
+                                                                             click: $parent.toggleSelected"></button>
+        </div>
+    </div> -->
+    <div> <strong>Codons 0 - 200</strong></div>
+    <div class="container-fluid" style="margin-bottom: 5px;">
+        <div data-bind="foreach: Array1">
             <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
                                                                              css: {active: selected},
                                                                              click: $parent.toggleSelected"></button>
         </div>
     </div>
 
-    <div class="container">
+    <div> <strong>Codons 201 - 400</strong></div>
+    <div class="container-fluid" style="margin-bottom: 5px;">
+        <div data-bind="foreach: Array2">
+            <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
+                                                                             css: {active: selected},
+                                                                             click: $parent.toggleSelected"></button>
+        </div>
+    </div>
+
+    <div> <strong>Codons 401 - 600</strong></div>
+    <div class="container-fluid" style="margin-bottom: 5px;">
+        <div data-bind="foreach: Array3">
+            <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
+                                                                             css: {active: selected},
+                                                                             click: $parent.toggleSelected"></button>
+        </div>
+    </div>
+
+    <div> <strong>Codons 601 - 800</strong></div>
+    <div class="container-fluid" style="margin-bottom: 5px;">
+        <div data-bind="foreach: Array4">
+            <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
+                                                                             css: {active: selected},
+                                                                             click: $parent.toggleSelected"></button>
+        </div>
+    </div>
+
+    <div> <strong>Codons 800+</strong></div>
+    <div class="container-fluid" style="margin-bottom: 5px;">
+        <div data-bind="foreach: Array5">
+            <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
+                                                                             css: {active: selected},
+                                                                             click: $parent.toggleSelected"></button>
+        </div>
+    </div>
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="col">
+            <div class="col-1">
                 <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
                     <div class="card-header"><h4 style="color:inherit">Mutations</h4></div>
                     <div class="card-body">
@@ -59,7 +96,6 @@
                     </div>
                 </div>
             </div>
-        <div class="row">
             <div class="col">
                 <div class="card bg-secondary mb-3" style="width: fit-content;">
                     <div class="card-header"><h4 style="color:inherit">Best Fit</h4></div>
@@ -79,7 +115,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 
