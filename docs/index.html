@@ -29,15 +29,13 @@
     </nav>
 
 
+    <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <h4 class="alert-heading">Disclaimer</h4>
+        <p class="mb-0">The information contained on this site is for informational purposes only. Material on this site is not intended to be used to make medical diagnosis or treatment decisions or any other decisions involved in the management of COVID-19 infected individuals or individuals that they may have contacted. The content of this site was gathered from multiple, publicly-accessible resources. The material presented at this site may be subject to inaccuracies inherent in the original data, or accrued during collation of data, or its electronic manipulation. Many previously described variants and subvariants of SARS-CoV-2 are not included in the SARS-2-TYPER. The list is based on common variants and subvariants currently or previously circulating in the United States. Future emerging variants and subvariants and mutations may or may not be added to the SARS-2-TYPER. Users are permitted to copy and use the open-source code for this site for other purposes with the understanding that the authors of the SARS2-TYPER will not be held liable for its content or functionality.</p>
+      </div>
 
-
-    <!-- <div class="container-fluid" style="margin-bottom: 50px;">
-        <div data-bind="foreach: mutations">
-            <button type="button" class="btn btn-outline-primary" data-bind="text: name, 
-                                                                             css: {active: selected},
-                                                                             click: $parent.toggleSelected"></button>
-        </div>
-    </div> -->
+    
     <div> <strong>Codons 0 - 200</strong></div>
     <div class="container-fluid" style="margin-bottom: 5px;">
         <div data-bind="foreach: Array1">
@@ -119,7 +117,7 @@
     </div>
 
     <div class="container">
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="IncludeVars">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" data-bind="click:toggleAcc, css: {collapsed: showAcc}" >
@@ -144,21 +142,7 @@
             </div>
           </div>
     </div>
-
-
-    <div class="container">
-       
-    </div>
-
-    <!-- <div class="container">
-        <ul class="list-group" data-bind="foreach: mutations">
-            <li class="justify-content-between align-items-center" data-bind="text: name,
-            visible: selected"> </li>
-        </ul>
-    </div> -->
-
-    
-    
+   
 </body>
 <script src="covid.js"></script>
 </html>
