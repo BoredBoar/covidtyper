@@ -158,6 +158,7 @@ function AppViewModel() {
       {name:"N1187D", selected: ko.observable(false)},
       {name:"K1191N", selected: ko.observable(false)}
      ])
+     
 
      self.Array1 = self.mutations().filter(mut => {
       var regex = /\d+/g

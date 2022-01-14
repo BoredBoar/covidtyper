@@ -28,7 +28,14 @@ const lines = text.trim().split('\n')
 
 // console.log(JSON.stringify(lines, null, 2))
 // console.log(lines);
-fs.writeFileSync('./Cov.txt',JSON.stringify(lines, null, 2))
+// fs.writeFileSync('./Cov.txt',JSON.stringify(lines, null, 2))
+const fd = fs.openSync('./testJSON.txt','w')
+fs.writeSync(fd, '[\n')
+console.log(typeof(lines))
+lines.forEach(line => {
+    fs.writeSync(fd,JSON.stringify(line) + '\n')
+});
+fs.closeSync(fd)
 
 let sortedAr = Object.keys(muts).sort((a,b) => {
     // console.log(a,b);
@@ -40,4 +47,4 @@ let sortedAr = Object.keys(muts).sort((a,b) => {
 })
 
 
-fs.writeFileSync('./mutations.txt',sortedAr.reduce((x,mut) => {x += `{name:"` + mut + `", selected: ko.observable(false)},\n`;return x},''))
+// fs.writeFileSync('./mutations.txt',sortedAr.reduce((x,mut) => {x += `{name:"` + mut + `", selected: ko.observable(false)},\n`;return x},''))
