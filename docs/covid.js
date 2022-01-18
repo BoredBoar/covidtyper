@@ -62,7 +62,7 @@ function AppViewModel() {
     self.activeList(Object.keys(self.variants())
     .reduce((x, variant) => {
         self.variants()[variant].sublineages.forEach(lineage => {
-            x.push({name:variant + "(" + lineage.name + ")", status:lineage.active})
+            x.push({name:`${variant} ${lineage.name ? "(" + lineage.name + ")" : ""}`, status:lineage.active})
         })
         return x
     },[]))
@@ -120,9 +120,9 @@ function AppViewModel() {
         Object.keys(self.variants()).forEach(variant => {
             self.variants()[variant].sublineages.forEach(lineage => {
                 // if(self.activeList()[variant + "(" + lineage.name + ")"].status) {
-                if(self.activeList().filter(check => check.name === variant + "(" + lineage.name + ")")[0].status) {
+                if(self.activeList().filter(check => check.name === `${variant} ${lineage.name ? "(" + lineage.name + ")" : ""}`)[0].status) {
                     tempScore = self.getScore(selections,lineage.mutations)
-                    display = variant + " "  + self.variants()[variant].WHO + " (" + lineage.name + ")" 
+                    display = variant + " "  + self.variants()[variant].WHO + `${lineage.name ? " (" + lineage.name + ")" : ""}` 
                     if(tempScore > maxScore) {
                         maxScore = tempScore
                         maxVariants = [{display:display, lineage:lineage}]
