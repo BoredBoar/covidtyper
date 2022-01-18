@@ -114,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-10">
                 <div class="card bg-secondary mb-3" style="width: fit-content;">
                     <div class="card-header"><h4 style="color:inherit">Best Fit</h4></div>
                     <div class="card-body">
@@ -124,7 +124,8 @@
                             <table class="table table-hover">
                                 <tbody>
                                     <tr data-bind="foreach: lineage.mutations">
-                                        <td data-bind="text: $data, css: {'present': $parents[1].mutations().find(mut => mut.name == $data).selected()}"></td>
+                                        <!-- <td data-bind="text: $data"></td> -->
+                                        <td data-bind="text: $data, css: {'present': $parents[1].mutations().find(mut => mut.name == $data.replaceAll(/[()]/g,'')).selected()}"></td>
                                         <!-- <p data-bind="text: $parent.mutations()[0].name"></p> -->
                                       </tr>
                                 </tbody> 

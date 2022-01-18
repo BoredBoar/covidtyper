@@ -29,12 +29,14 @@ const lines = text.trim().split('\n')
 // console.log(JSON.stringify(lines, null, 2))
 // console.log(lines);
 // fs.writeFileSync('./Cov.txt',JSON.stringify(lines, null, 2))
+const keys = Object.keys(lines)
 const fd = fs.openSync('./testJSON.txt','w')
-fs.writeSync(fd, '[\n')
-console.log(typeof(lines))
-lines.forEach(line => {
-    fs.writeSync(fd,JSON.stringify(line) + '\n')
+fs.writeSync(fd, '{\n')
+keys.forEach((key,index) => {
+    if(index > 0) {fs.writeSync(fd,`,\n`)}
+    fs.writeSync(fd,`"${key}": ${JSON.stringify(lines[key])}`)
 });
+fs.writeSync(fd, '\n}')
 fs.closeSync(fd)
 
 let sortedAr = Object.keys(muts).sort((a,b) => {
