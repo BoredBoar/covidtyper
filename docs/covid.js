@@ -56,7 +56,13 @@ function AppViewModel() {
       var a_num = a.name.match(regex)
       var b_num = b.name.match(regex)
       // console.log(a,a_num, b, b_num)
-      return parseInt(a_num[0]) - parseInt(b_num[0])
+      if(parseInt(a_num[0]) - parseInt(b_num[0]) !== 0) {
+        return parseInt(a_num[0]) - parseInt(b_num[0])
+      }
+      //If numbers are equal, sor del to the front and otherwise sort based on substitution
+      if(a.name.includes('del')) return -1
+      if(b.name.includes('del')) return 1
+      return a.name.localeCompare(b.name, 'en', {caseFirst: 'lower'})
   })
 
     self.activeList(Object.keys(self.variants())
