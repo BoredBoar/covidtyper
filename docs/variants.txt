@@ -16,7 +16,7 @@
 "B.1.619": {"Location":"","WHO":"","NEXT":"","sublineages":[{"name":"","active":true,"mutations":["I210T","N440K","E484K","D614G","D936N","Q939F","T1027I"]}]},
 "B.1.620": {"Location":"Cameroon","WHO":"","NEXT":"20A/S:126A","sublineages":[{"name":"","active":true,"mutations":["P26S","H69del","V70del","V126A","Y144del","L241del","L242del","A243del","H245Y","S477N","E484K","N501Y","D614G","P681H","T1027I","D1118H"]}]},
 "B.1.621": {"Location":"Colombia","WHO":"Mu","NEXT":"21H","sublineages":[{"name":"","active":true,"mutations":["T95I","Y144T","Y144S","Y145S","Y145N","ins146N","E346K","E484K","N501Y","D614G","P681H","D950N"]}]},
-"B.1.1.1.C37": {"Location":"Peru","WHO":"Lambda","NEXT":"21G","sublineages":[{"name":"","active":true,"mutations":["G75V","T76I","R246del(R246N)","S247del","Y248del","L249del","T250del","P251del","G252del","D253(D253G)","L452Q","F490S","D614G","T859N"]}]},
+"B.1.1.1.C37": {"Location":"Peru","WHO":"Lambda","NEXT":"21G","sublineages":[{"name":"","active":true,"mutations":["G75V","T76I","R246del","(R246N)","S247del","Y248del","L249del","T250del","P251del","G252del","D253del","(D253G)","L452Q","F490S","D614G","T859N"]}]},
 "B.1.1.318-related": {"Location":"","WHO":"","NEXT":"","sublineages":[{"name":"","active":true,"mutations":["T95I","Y144del","E484K","D614G","P681H","D796H"]}]},
 "B.1.1.519": {"Location":"Mexico","WHO":"","NEXT":"","sublineages":[{"name":"","active":true,"mutations":["T478K","D614G","P681H","T732A"]}]},
 "B.1.1.523": {"Location":"","WHO":"","NEXT":"","sublineages":[{"name":"","active":true,"mutations":["E156del","F157del","R158G","F306L","E484K","S494P","D614G","E780A","D839V","T1027I"]}]},
