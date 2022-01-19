@@ -163,6 +163,10 @@ function AppViewModel() {
 
     self.showAcc = ko.observable(false)
 
+    self.dismissAlert = () => {
+      $(".alert").alert('close')
+    }
+
     self.toggleAcc = () => {
         self.showAcc(!self.showAcc())
     }

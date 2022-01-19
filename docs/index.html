@@ -7,6 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js" integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.1/dist/zephyr/bootstrap.min.css" integrity="sha256-fPcXOlGMPTfMzh2hrJPeYWulsKXYdIssk5VBAbZEUMI=" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <title>SARS2-Typer</title>
 
     
@@ -29,8 +31,8 @@
     </nav>
 
 
-    <div class="alert alert-dismissible alert-warning">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <div class="alert alert-dismissible alert-warning fade show">
+        <button type="button" class="btn-close" data-bind='click:dismissAlert'></button>
         <h4 class="alert-heading">Disclaimer</h4>
         <p class="mb-0">The information contained on this site is for informational purposes only. Material on this site is not intended to be used to make medical diagnosis or treatment decisions or any other decisions involved in the management of COVID-19 infected individuals or individuals that they may have contacted. The content of this site was gathered from multiple, publicly-accessible resources. The material presented at this site may be subject to inaccuracies inherent in the original data, or accrued during collation of data, or its electronic manipulation. Many previously described variants and subvariants of SARS-CoV-2 are not included in the SARS2-TYPER. The list is based on common variants and subvariants currently or previously circulating in the United States. Future emerging variants and subvariants and mutations may or may not be added to the SARS2-TYPER. Users are permitted to copy and use the open-source code for this site for other purposes with the understanding that the authors of the SARS2-TYPER will not be held liable for its content or functionality.</p>
       </div>
